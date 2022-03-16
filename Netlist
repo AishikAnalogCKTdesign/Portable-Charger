@@ -1,0 +1,29 @@
+Main Circuit Netlist
+
+
+.include Active_Rectifier.sub
+
+.lib "skywater-pdk-libs-sky130_fd_pr-main/models/sky130.lib.spice" tt
+
+xm1  net-_m1-pad1_ net-_m1-pad1_ 5V_DC 5V_DC sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+* u1  v_dc 5v_dc port
+x1 V_ac Vg1 Vg2 gnd net-_m1-pad1_ Active_Rectifier
+
+v1  V_ac 0 sine(0 20 50 0 0)
+v2  Vg1 0 pulse(0 5 10u 1n 1n 1m 2m)
+v3  Vg2 0 pulse(5 0 10u 1n 1n 1m 2m)
+Vo  v_DC 0 DC 5
+.tran 1m 100m
+
+* Control Statements
+.control
+run
+
+plot v(V_ac) v(V_DC)
+
+print allv > plot_data_v.txt
+
+print alli > plot_data_i.txt
+
+.endc
+.end
