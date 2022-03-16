@@ -36,5 +36,4 @@ but up to a certain limit so we need to absolutely sure that
 there is not much voltage drop across the input components
 of the LM7805. A Zener of 5V voltage rating will be used to
 protect the LM7805 and the output from getting distorted.
-Isolation diode is used in between rectifier and voltage regulator , here 5 V DC supply
-is used as LM7805 is not present in the spice netlist of the ESIM FOSEE.
+Isolation diode is used in between rectifier and voltage regulator.
