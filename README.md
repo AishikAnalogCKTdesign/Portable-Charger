@@ -19,7 +19,7 @@ The voltage regulation. The circuit consists of a AC input
 source of already stepped down voltage as the step down
 transformer in Spice can’t be modelled. The Transformer
 turns ratio should be calculated via the given below formula
-equation Np/Ns equals to Ep/Es where the Ns is the number if turns in the primary coil and the Ns is the number of
+equation Np/Ns equals to Ep/Es where the Ns is the number if turns in the primary coil and the Ns is the number of
 turns in the secondary coil . The Ep is the voltage across the
 primary node and the Es is the voltage across the secondary
 node and the capacitance values to reduce the ripple must be
